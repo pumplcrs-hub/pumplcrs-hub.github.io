@@ -1,0 +1,54 @@
+name: Deploy exact Brewtanist ZIP
+
+on:
+  push:
+    paths:
+      - '.github/workflows/deploy-exact.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download exact source ZIP
+        run: |
+          curl -L "https://drive.usercontent.google.com/download?id=1gTUx8vTybb5LBBFdtZNmkFb6NT-rcZhp&export=download&confirm=t" -o /tmp/site.zip
+          mkdir -p /tmp/site
+          unzip -q /tmp/site.zip -d /tmp/site
+
+      - name: Locate website root
+        id: root
+        shell: bash
+        run: |
+          INDEX_PATH=$(find /tmp/site -type f -name index.html | head -n 1)
+          if [ -z "$INDEX_PATH" ]; then
+            echo "index.html not found in ZIP" >&2
+            exit 1
+          fi
+          SITE_ROOT=$(dirname "$INDEX_PATH")
+          echo "site_root=$SITE_ROOT" >> "$GITHUB_OUTPUT"
+          echo "Using $SITE_ROOT"
+
+      - name: Mirror ZIP contents into repository
+        shell: bash
+        run: |
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.github' -exec rm -rf {} +
+          cp -a "${{ steps.root.outputs.site_root }}/." .
+
+      - name: Commit exact website
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Mirror Brewtanist website from source ZIP"
+          git push
