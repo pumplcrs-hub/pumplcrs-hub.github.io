@@ -1,0 +1,9 @@
+title: The Brewtanist Cafe & Coffee Roaster
+url: https://pumplcrs-hub.github.io
+baseurl: ""
+encoding: utf-8
+exclude:
+  - README.txt
+  - EDITING.md
+  - Gemfile
+  - Gemfile.lock

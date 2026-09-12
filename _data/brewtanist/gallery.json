@@ -1,0 +1,14 @@
+{
+  "visible": true,
+  "title": "Life at\nBrewtanist.",
+  "description": "กาแฟ ขนม และพื้นที่สีเขียว มองรอบร้านสักนิด ก่อนมาเจอกัน",
+  "images": [
+    {"visible": true, "image": "/brewtanist/assets/gallery-bar.jpg", "alt": "บาร์กาแฟและบรรยากาศภายใน Brewtanist", "caption": "The coffee bar", "position": "center"},
+    {"visible": true, "image": "/brewtanist/assets/gallery-coffee-bakery.jpg", "alt": "กาแฟเย็นกับ Scone และ Croissant ของ Brewtanist", "caption": "Coffee & bakery", "position": "center"},
+    {"visible": true, "image": "/brewtanist/assets/gallery-apple-drink.jpg", "alt": "เครื่องดื่มแอปเปิ้ลที่บาร์ Brewtanist", "caption": "Something refreshing", "position": "center"},
+    {"visible": true, "image": "/brewtanist/assets/gallery-botanical-drink.jpg", "alt": "เครื่องดื่มที่ตกแต่งด้วยใบไม้ของ Brewtanist", "caption": "A botanical touch", "position": "center"},
+    {"visible": true, "image": "/brewtanist/assets/gallery-coldbrew.jpg", "alt": "ขวด Cold Brew ของ Brewtanist", "caption": "Cold brew, your way", "position": "center"},
+    {"visible": true, "image": "/brewtanist/assets/gallery-signature-drink.jpg", "alt": "เครื่องดื่มเย็นในแก้วลาย Brewtanist", "caption": "Everyday discoveries", "position": "center"},
+    {"visible": false, "image": "/brewtanist/assets/social-cafe-story.jpg", "alt": "ภาพรวมร้านและเมนูจากชุด Cafe Story ของ Brewtanist", "caption": "Our café story", "position": "center"}
+  ]
+}

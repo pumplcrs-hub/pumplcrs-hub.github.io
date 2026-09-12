@@ -1,0 +1,208 @@
+media:
+  input: brewtanist/assets
+  output: /brewtanist/assets
+  extensions: [jpg, jpeg, png, webp]
+  rename: true
+
+content:
+  - name: home
+    label: "01 · หน้าบนและเรื่องราว"
+    type: file
+    path: _data/brewtanist/home.json
+    format: json
+    fields:
+      - { name: hero_eyebrow, label: "ข้อความเล็กเหนือหัวเรื่อง", type: string }
+      - { name: hero_title, label: "หัวเรื่องหน้าแรก (ขึ้นบรรทัดใหม่ได้)", type: text, required: true }
+      - { name: hero_text, label: "คำแนะนำร้านใต้หัวเรื่อง", type: text }
+      - { name: hero_image, label: "ภาพใหญ่หน้าแรก", type: image, required: true }
+      - { name: hero_alt, label: "คำอธิบายภาพหน้าแรก", type: string, required: true }
+      - name: hero_position
+        label: "จุดครอปภาพหน้าแรก"
+        type: select
+        options: { values: [center, top, bottom, left, right] }
+      - name: hero_image_side
+        label: "ตำแหน่งภาพหน้าแรกบนคอมพิวเตอร์"
+        type: select
+        options:
+          values:
+            - { name: right, label: "ภาพขวา / ข้อความซ้าย (ค่าเริ่มต้น)" }
+            - { name: left, label: "ภาพซ้าย / ข้อความขวา" }
+      - { name: hero_caption, label: "ข้อความใต้ภาพหน้าแรก", type: string }
+      - { name: hero_button, label: "ข้อความปุ่มพิกัดร้าน", type: string }
+      - { name: hero_second_button, label: "ข้อความปุ่มสำรวจกาแฟ", type: string }
+      - { name: story_visible, label: "แสดงส่วนเรื่องราวของเรา", type: boolean }
+      - { name: story_title, label: "หัวเรื่อง Brew + Botanist", type: text }
+      - { name: story_text, label: "เนื้อหาเรื่องราวของร้าน", type: text }
+      - { name: story_image, label: "ภาพประกอบเรื่องราว", type: image }
+      - { name: story_alt, label: "คำอธิบายภาพเรื่องราว", type: string }
+      - name: story_position
+        label: "จุดครอปภาพเรื่องราว"
+        type: select
+        options: { values: [center, top, bottom, left, right] }
+      - { name: story_caption, label: "ข้อความใต้ภาพเรื่องราว", type: string }
+      - { name: visit_title, label: "หัวเรื่องส่วนพิกัดร้าน", type: text }
+      - { name: visit_text, label: "ข้อความเกี่ยวกับการแวะมาร้าน", type: text }
+      - { name: visit_image, label: "ภาพข้างข้อมูลติดต่อ", type: image }
+      - { name: visit_alt, label: "คำอธิบายภาพพิกัดร้าน", type: string }
+      - name: visit_position
+        label: "จุดครอปภาพพิกัดร้าน"
+        type: select
+        options: { values: [center, top, bottom, left, right] }
+
+  - name: coffee
+    label: "02 · กาแฟและเบเกอรี่"
+    type: file
+    path: _data/brewtanist/coffee.json
+    format: json
+    fields:
+      - { name: visible, label: "แสดงส่วนนี้บนเว็บไซต์", type: boolean }
+      - { name: title, label: "หัวเรื่อง", type: text }
+      - { name: description, label: "คำอธิบาย", type: text }
+      - name: cards
+        label: "การ์ดเมนู (เปลี่ยนลำดับในรายการได้)"
+        type: object
+        list: true
+        fields:
+          - { name: visible, label: "แสดงการ์ดนี้", type: boolean }
+          - { name: label, label: "หัวข้อเล็ก", type: string }
+          - { name: title, label: "ชื่อเมนูหรือหมวด", type: string, required: true }
+          - { name: text, label: "รายละเอียด", type: text }
+          - { name: image, label: "รูปภาพ", type: image, required: true }
+          - { name: alt, label: "คำอธิบายภาพ", type: string, required: true }
+          - name: position
+            label: "จุดครอปภาพ"
+            type: select
+            options: { values: [center, top, bottom, left, right] }
+
+  - name: products
+    label: "03 · สินค้าและภาพ 3D"
+    type: file
+    path: _data/brewtanist/products.json
+    format: json
+    fields:
+      - { name: visible, label: "แสดงส่วนนี้บนเว็บไซต์", type: boolean }
+      - { name: title, label: "หัวเรื่อง", type: text }
+      - { name: description, label: "คำแนะนำสินค้า", type: text }
+      - { name: note, label: "ข้อความใต้ชุดสินค้า", type: text }
+      - { name: button, label: "ข้อความปุ่มไป Shopee", type: string }
+      - name: items
+        label: "สินค้า (เพิ่ม ลบ หรือเปลี่ยนลำดับได้)"
+        type: object
+        list: true
+        fields:
+          - { name: visible, label: "แสดงสินค้านี้", type: boolean }
+          - { name: name, label: "ชื่อสินค้า", type: string, required: true }
+          - { name: profile, label: "ชนิดและระดับคั่ว", type: string }
+          - { name: notes, label: "Tasting notes", type: string }
+          - { name: description, label: "คำอธิบายสินค้า", type: text }
+          - { name: image, label: "ภาพสินค้า / ภาพ 3D", type: image, required: true }
+          - { name: alt, label: "คำอธิบายภาพสินค้า", type: string, required: true }
+          - name: theme
+            label: "สีพื้นหลังสินค้า"
+            type: select
+            options:
+              values:
+                - { name: plantman, label: "เหลือง Plantman" }
+                - { name: ozmo, label: "ฟ้า Ozmo" }
+                - { name: lazybug, label: "ชมพู Lazybug" }
+
+  - name: roastery
+    label: "04 · เรื่องโรงคั่ว"
+    type: file
+    path: _data/brewtanist/roastery.json
+    format: json
+    fields:
+      - { name: visible, label: "แสดงส่วนนี้บนเว็บไซต์", type: boolean }
+      - { name: title, label: "หัวเรื่อง", type: text }
+      - { name: description, label: "เรื่องราวโรงคั่ว", type: text }
+      - { name: image, label: "ภาพโรงคั่วจริง (ยังไม่มีให้เว้นว่าง)", type: image }
+      - { name: alt, label: "คำอธิบายภาพโรงคั่ว", type: string }
+      - name: position
+        label: "จุดครอปภาพโรงคั่ว"
+        type: select
+        options: { values: [center, top, bottom, left, right] }
+      - { name: caption, label: "ข้อความใต้ภาพโรงคั่ว", type: string }
+      - name: steps
+        label: "ขั้นตอนการทำกาแฟ"
+        type: object
+        list: true
+        fields:
+          - { name: title, label: "ชื่อขั้นตอน", type: string, required: true }
+          - { name: text, label: "คำอธิบาย", type: text }
+
+  - name: gallery
+    label: "05 · แกลเลอรี"
+    type: file
+    path: _data/brewtanist/gallery.json
+    format: json
+    fields:
+      - { name: visible, label: "แสดงส่วนนี้บนเว็บไซต์", type: boolean }
+      - { name: title, label: "หัวเรื่อง", type: text }
+      - { name: description, label: "คำอธิบาย", type: text }
+      - name: images
+        label: "รูปภาพ (เรียงตามลำดับที่แสดงบนเว็บ)"
+        type: object
+        list: true
+        fields:
+          - { name: visible, label: "แสดงรูปนี้", type: boolean }
+          - { name: image, label: "เลือกรูปหรืออัปโหลดใหม่", type: image, required: true }
+          - { name: caption, label: "ข้อความใต้รูป", type: string }
+          - { name: alt, label: "คำอธิบายภาพ", type: string, required: true }
+          - name: position
+            label: "จุดครอปภาพ"
+            type: select
+            options: { values: [center, top, bottom, left, right] }
+
+  - name: faq
+    label: "06 · คำถามที่พบบ่อย"
+    type: file
+    path: _data/brewtanist/faq.json
+    format: json
+    fields:
+      - { name: visible, label: "แสดงส่วนนี้บนเว็บไซต์", type: boolean }
+      - { name: title, label: "หัวเรื่อง", type: string }
+      - name: items
+        label: "คำถามเพิ่มเติม (พิกัดและเวลาเปิดดึงจากข้อมูลร้านอัตโนมัติ)"
+        type: object
+        list: true
+        fields:
+          - { name: question, label: "คำถาม", type: string, required: true }
+          - { name: answer, label: "คำตอบ", type: text, required: true }
+
+  - name: settings
+    label: "07 · ข้อมูลร้าน ลิงก์ และ SEO"
+    type: file
+    path: _data/brewtanist/settings.json
+    format: json
+    fields:
+      - { name: brand, label: "ชื่อแบรนด์", type: string, required: true }
+      - { name: descriptor, label: "คำอธิบายใต้ชื่อแบรนด์", type: string }
+      - { name: notice, label: "ข้อความแถบบนเว็บไซต์", type: string }
+      - { name: address, label: "ที่อยู่เต็ม", type: text, required: true }
+      - { name: location_note, label: "คำอธิบายทางเข้าร้าน", type: text }
+      - { name: phone, label: "เบอร์โทร (เช่น 063 412 7098)", type: string, required: true }
+      - { name: opening_days, label: "วันเปิดที่แสดงบนหน้าเว็บ (เช่น เปิดทุกวัน)", type: string }
+      - { name: opens, label: "เวลาเปิด รูปแบบ 08:00", type: string, required: true }
+      - { name: closes, label: "เวลาปิด รูปแบบ 17:00", type: string, required: true }
+      - name: days
+        label: "วันเปิดสำหรับ Google (เลือกให้ตรงกับข้อความวันเปิด)"
+        type: select
+        options:
+          multiple: true
+          values:
+            - { name: Monday, label: "จันทร์" }
+            - { name: Tuesday, label: "อังคาร" }
+            - { name: Wednesday, label: "พุธ" }
+            - { name: Thursday, label: "พฤหัสบดี" }
+            - { name: Friday, label: "ศุกร์" }
+            - { name: Saturday, label: "เสาร์" }
+            - { name: Sunday, label: "อาทิตย์" }
+      - { name: payment, label: "วิธีชำระเงิน", type: string }
+      - { name: maps, label: "ลิงก์ Google Maps (https://)", type: string, required: true }
+      - { name: facebook, label: "ลิงก์ Facebook (https://)", type: string }
+      - { name: instagram, label: "ลิงก์ Instagram (https://)", type: string }
+      - { name: tiktok, label: "ลิงก์ TikTok (https://)", type: string }
+      - { name: shopee, label: "ลิงก์ Shopee (https://)", type: string }
+      - { name: seo_title, label: "ชื่อหน้าเว็บสำหรับ Google", type: string, required: true }
+      - { name: seo_description, label: "คำอธิบายหน้าเว็บสำหรับ Google", type: text, required: true }
+      - { name: social_image, label: "รูปเมื่อแชร์ลิงก์เว็บไซต์", type: image }

@@ -1,0 +1,12 @@
+{
+  "visible": true,
+  "title": "Take a little\nBrewtanist home.",
+  "description": "House Blend สามคาแรกเตอร์ในแพ็กเกจของ Brewtanist เลือกกาแฟที่ชอบ แล้วชงต่อในมุมโปรดที่บ้าน",
+  "note": "ยังมี Single Origin หมุนเวียน, Drip Bag และ Coffee Capsule สอบถามรายการและรายละเอียดล่าสุดกับทางร้าน",
+  "button": "ดูสินค้าใน Shopee",
+  "items": [
+    {"visible": true, "name": "Mr. Plantman", "profile": "Espresso blend · Medium–Dark", "notes": "Dark chocolate · Caramel · Nutty", "description": "Full body — คาแรกเตอร์สำหรับกาแฟดำและกาแฟนม", "image": "/brewtanist/assets/plantman-3d.webp", "alt": "ภาพ 3D ถุงเมล็ดกาแฟ Mr. Plantman ของ Brewtanist", "theme": "plantman"},
+    {"visible": true, "name": "Mr. Ozmo", "profile": "Espresso blend · Medium–Dark", "notes": "Vanilla · Rum-Raisin · Milk Chocolate", "description": "คาแรกเตอร์เข้มข้น พร้อมกลิ่นหอมหวานและซับซ้อน", "image": "/brewtanist/assets/ozmo-3d.webp", "alt": "ภาพ 3D ถุงเมล็ดกาแฟ Mr. Ozmo ของ Brewtanist", "theme": "ozmo"},
+    {"visible": true, "name": "Ms. Lazybug", "profile": "Espresso blend · Light–Medium", "notes": "Floral · Fruity · Tea-like", "description": "โปรไฟล์สว่างและหอม สำหรับคนที่ชอบกาแฟดำโทนสดชื่น", "image": "/brewtanist/assets/lazybug-3d.webp", "alt": "ภาพ 3D ถุงเมล็ดกาแฟ Ms. Lazybug ของ Brewtanist", "theme": "lazybug"}
+  ]
+}

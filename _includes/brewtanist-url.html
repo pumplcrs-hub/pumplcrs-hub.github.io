@@ -1,0 +1,1 @@
+{%- assign u = include.url | default: '' | strip -%}{%- assign scheme = u | slice: 0, 8 -%}{%- assign first = u | slice: 0, 1 -%}{%- assign first_two = u | slice: 0, 2 -%}{%- if scheme == 'https://' -%}{{- u | escape -}}{%- elsif first == '/' and first_two != '//' -%}{{- u | escape -}}{%- else -%}#{%- endif -%}
