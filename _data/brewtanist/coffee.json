@@ -3,8 +3,32 @@
   "title": "Find your kind\nof coffee.",
   "description": "เริ่มจากแก้วที่คุ้นเคย หรือชวนบาริสต้าคุยเรื่องเมล็ดที่อยากลอง มีทั้ง Espresso, Single Origin, Pour Over รวมถึง Matcha และขนมคู่กาแฟ",
   "cards": [
-    {"visible": true, "label": "01 / Espresso", "title": "House blends", "text": "Mr. Ozmo, Mr. Plantman และ Ms. Lazybug สามคาแรกเตอร์ของ House Blend ที่ Brewtanist", "image": "/brewtanist/assets/brewtanist-blends.jpg", "alt": "เครื่องบดกาแฟกับ House Blend ของ Brewtanist", "position": "center"},
-    {"visible": true, "label": "02 / Filter", "title": "Single origin", "text": "เลือกลองเมล็ด Single Origin หมุนเวียนจากแหล่งปลูกต่าง ๆ ผ่านการชง Filter และ Pour Over", "image": "/brewtanist/assets/brewtanist-pourover.jpg", "alt": "การชงกาแฟ Pour Over ของ Brewtanist", "position": "center"},
-    {"visible": true, "label": "03 / More to discover", "title": "Matcha & bakery", "text": "Matcha และเบเกอรี่โฮมเมดหมุนเวียน ทั้ง Scone, Croissant และ Cake รายการขนมอาจเปลี่ยนหรือหมดระหว่างวัน", "image": "/brewtanist/assets/brewtanist-food.jpg", "alt": "เครื่องดื่มและเบเกอรี่ของ Brewtanist", "position": "center"}
+    {
+      "visible": true,
+      "label": "01 / Espresso",
+      "title": "House blends",
+      "text": "Mr. Ozmo, Mr. Plantman และ Ms. Lazybug สามคาแรกเตอร์ของ House Blend ที่ Brewtanist",
+      "image": "/brewtanist/assets/brewtanist-blends.jpg",
+      "alt": "เครื่องบดกาแฟกับ House Blend ของ Brewtanist",
+      "position": "center"
+    },
+    {
+      "visible": true,
+      "label": "02 / Filter",
+      "title": "Single origin",
+      "text": "เลือกลองเมล็ด Single Origin หมุนเวียนจากแหล่งปลูกต่าง ๆ ผ่านการชง Filter และ Pour Over",
+      "image": "/brewtanist/assets/brewtanist-pourover.jpg",
+      "alt": "การชงกาแฟ Pour Over ของ Brewtanist",
+      "position": "center"
+    },
+    {
+      "visible": true,
+      "label": "03 / More to discover",
+      "title": "Matcha & bakery",
+      "text": "Matcha และเบเกอรี่โฮมเมดหมุนเวียน ทั้ง Scone, Croissant และ Cake รายการขนมอาจเปลี่ยนไปตามช่วงเวลา",
+      "image": "/brewtanist/assets/brewtanist-food.jpg",
+      "alt": "เครื่องดื่มและเบเกอรี่ของ Brewtanist",
+      "position": "center"
+    }
   ]
 }
